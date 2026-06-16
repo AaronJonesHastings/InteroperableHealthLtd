@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import FlipCard from "../components/FlipCard.astro";
 ---
 
 <html>
@@ -35,9 +36,20 @@ import '../styles/global.css';
     </section>
 
     <section class="max-w-6xl mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-8">
+            <FlipCard
+                frontTitle="About us"
+                frontContent="What is Astro?"
+                backTitle="Answer"
+                backContent="Learn about our goals"
+            />
+        </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-6 py-12">
 
         <h2 class="text-3xl font-bold mb-8">
-            Services
+            Our Services
         </h2>
 
         <div class="grid md:grid-cols-3 gap-6">

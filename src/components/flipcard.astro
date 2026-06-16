@@ -1,0 +1,21 @@
+---
+const { frontTitle, frontContent, backTitle, backContent } = Astro.props;
+---
+
+<div class="flip-card w-64 h-40">
+  <div class="flip-card-inner">
+    
+    <!-- FRONT -->
+    <div class="flip-card-front bg-white border rounded-xl shadow flex flex-col items-center justify-center p-4">
+      <h2 class="text-lg font-bold">{frontTitle}</h2>
+      <p class="text-sm text-gray-600 mt-2">{frontContent}</p>
+    </div>
+
+    <!-- BACK -->
+    <div class="flip-card-back bg-blue-600 text-white border rounded-xl shadow flex flex-col items-center justify-center p-4">
+      <h2 class="text-lg font-bold">{backTitle}</h2>
+      <p class="text-sm mt-2">{backContent}</p>
+    </div>
+
+  </div>
+</div>
