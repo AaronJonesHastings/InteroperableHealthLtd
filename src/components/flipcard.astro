@@ -16,8 +16,7 @@ const { frontTitle, backContent, href } = Astro.props;
     <div class="flip-card-face flip-card-back bg-blue-600 text-white border rounded-xl shadow p-4 flex flex-col items-center justify-center text-center">
       <a
         href={href}
-        class="bg-white text-blue-700 px-4 py-2 rounded-md font-semibold hover:bg-slate-100 transition"
-        data-card-link
+        class="text-white underline underline-offset-4 hover:opacity-80 transition"
       >
         {backContent}
       </a>
@@ -70,19 +69,23 @@ const { frontTitle, backContent, href } = Astro.props;
 </style>
 
 <script>
+  function resetAllCards() {
+    document.querySelectorAll("[data-flip-card]").forEach((card) => {
+      card.classList.remove("is-flipped");
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", resetAllCards);
+  window.addEventListener("pageshow", resetAllCards);
+
   document.querySelectorAll("[data-flip-card]").forEach((card) => {
     const link = card.querySelector("[data-card-link]");
 
-    // Tap / click flips card first
     card.addEventListener("click", (e) => {
-      // If user clicked the link → allow navigation
       if (e.target.closest("[data-card-link]")) return;
-
-      // Otherwise toggle flip
       card.classList.toggle("is-flipped");
     });
 
-    // Prevent accidental navigation when card is not flipped
     link.addEventListener("click", (e) => {
       e.stopPropagation();
     });
