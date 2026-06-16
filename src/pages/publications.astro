@@ -1,0 +1,28 @@
+---
+const papers = [
+    {
+        title: "Improving Blood Transfusion Communications",
+        year: 2026,
+        link: "/papers/transfusion.pdf"
+    }
+];
+---
+
+<h1 class="text-4xl font-bold p-8">
+    Publications
+</h1>
+
+<ul class="p-8">
+
+    {papers.map(paper => (
+        <li class="mb-4">
+            <a
+                href={paper.link}
+                class="text-blue-700 underline"
+            >
+                {paper.title} ({paper.year})
+            </a>
+        </li>
+    ))}
+
+</ul>
