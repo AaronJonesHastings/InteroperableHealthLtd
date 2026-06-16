@@ -10,23 +10,16 @@ const { frontTitle, backContent, href } = Astro.props;
       <h2 class="text-lg font-bold text-slate-900">
         {frontTitle}
       </h2>
-      <p class="text-xs text-slate-500 mt-2">
-        Tap / hover to flip
-      </p>
     </div>
 
     <!-- BACK -->
     <div class="flip-card-face flip-card-back bg-blue-600 text-white border rounded-xl shadow p-4 flex flex-col items-center justify-center text-center">
-      <p class="text-sm mb-4">
-        {backContent}
-      </p>
-
       <a
         href={href}
         class="bg-white text-blue-700 px-4 py-2 rounded-md font-semibold hover:bg-slate-100 transition"
         data-card-link
       >
-        Read more →
+        {backContent}
       </a>
     </div>
 
